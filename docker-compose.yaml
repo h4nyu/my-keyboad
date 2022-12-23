@@ -1,0 +1,13 @@
+version: '2.4'
+
+
+
+x-app: &app
+  build:
+    context: .
+  volumes:
+    - .:/app
+
+services:
+  app:
+    <<: *app
