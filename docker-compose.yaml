@@ -2,11 +2,16 @@ version: '2.4'
 
 
 
+# x-env: &env # required
+
+
 x-app: &app
   build:
     context: .
   volumes:
     - .:/app
+  devices:
+  - "/dev/ttyACM0:/dev/ttyACM0"
 
 services:
   app:
