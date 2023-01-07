@@ -1,4 +1,4 @@
-FROM debian:stretch-slim
+FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y \
     binutils \
     gcc-avr \
@@ -8,6 +8,15 @@ RUN apt-get update && apt-get install -y \
     flex \
     byacc \
     bison \
-    make
+    make \
+    python3-minimal \
+    python3-pip \
+    git \
+    sudo
+RUN pip3 install qmk \
+    && qmk setup -y
+    
+
+
 
 WORKDIR /app
