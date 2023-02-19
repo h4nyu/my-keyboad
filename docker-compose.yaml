@@ -10,6 +10,7 @@ x-app: &app
     context: .
   volumes:
     - .:/app
+    - ./keyboards:/root/qmk_firmware/keyboards
   devices:
   - "/dev/ttyACM0:/dev/ttyACM0"
 
